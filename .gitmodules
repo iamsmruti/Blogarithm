@@ -1,0 +1,9 @@
+[submodule "Blogarithm-Admin"]
+	path = Blogarithm-Admin
+	url = https://github.com/iamsmruti/Blogarithm-Admin.git
+[submodule "Blogarithm-Client"]
+	path = Blogarithm-Client
+	url = https://github.com/iamsmruti/Blogarithm-Client.git
+[submodule "blogarithm-api"]
+	path = blogarithm-api
+	url = https://github.com/iamsmruti/blogarithm-api.git
