@@ -1,4 +1,4 @@
-import NavBar from "./NavBar/NavBar.js";
+import NavBar from "./Navbar";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
 
