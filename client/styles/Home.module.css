@@ -1,0 +1,36 @@
+.linearWipe {
+  font-size: 28px;
+  text-align: center;
+  
+  background: linear-gradient(45deg,#FC00FF 0%, #00DBDE 20%, #FC00FF 40%, #FC00FF 60%, #00DBDE 80%, #FC00FF 100%);
+  background-size: 200% auto;
+  
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: gradient 7s linear infinite;
+}
+
+.linearWipe2 {
+  font-size: 54px;
+  
+  background: linear-gradient(45deg,#FC00FF 0%, #00DBDE 20%, #FC00FF 40%, #FC00FF 60%, #00DBDE 80%, #FC00FF 100%);
+  background-size: 200% auto;
+  
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: gradient 7s linear infinite;
+}
+
+@keyframes gradient {
+  to {
+    background-position: 200% center;
+  }
+}
