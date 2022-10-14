@@ -1,4 +1,4 @@
-import NavBar from "./NavBar/NavBar";
+import NavBar from ".//NavBar/NavBar";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
 
