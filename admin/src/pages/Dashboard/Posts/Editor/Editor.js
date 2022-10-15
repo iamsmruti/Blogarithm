@@ -7,6 +7,7 @@ import { editorJsParser } from "editorjs-data-parser";
 import { useNavigate } from 'react-router-dom'
 import FileBase64 from 'react-file-base64';
 import { defaultValue } from "./DefaultValue";
+import axios from 'axios'
 
 const EditorJS = createReactEditorJS()
 
@@ -33,6 +34,10 @@ const Editor = () => {
         console.log(result);
         setBody(savedData)
         counter = 1
+
+        axios.post('https://blogarithm-api.onrender.com', body).then((res) => {
+            console.log(res)
+        })
     }, [])
 
     return (

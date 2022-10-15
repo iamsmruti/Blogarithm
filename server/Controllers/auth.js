@@ -38,11 +38,11 @@ export const loginUser = async (req, res) => {
 
     // If User with entered Email exists
     const user = await User.findOne({ email: req.body.email})
-    if(!user) return res.status(400).json("Incorrect Email")
+    if(!user) return res.status(400).json({message: "Incorrect Email"})
 
     // If exists , the password is checked
     const validPass = await bcrypt.compare(req.body.password, user.password)
-    if(!validPass) return res.status(400).json("Incorrect Password")
+    if(!validPass) return res.status(400).json({message: "Incorrect Password"})
 
     // JWT Token
     const token = jwt.sign({
@@ -52,7 +52,12 @@ export const loginUser = async (req, res) => {
         is_admin: user.is_admin
     }, process.env.TOKEN_SECRET)
 
-    return res.cookie('access_token', token, { httpOnly: true, expires: new Date(Date.now() + 48 * 3600000) }) && res.status(200).json({
+    return res.cookie('access_token', token, { 
+        httpsOnly: true, 
+        expires: new Date(Date.now() + 48 * 3600000),
+        sameSite: 'none',
+        secure: true 
+    }) && res.status(200).json({
         message: "Logged in Successfully"
     })
 }

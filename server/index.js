@@ -27,6 +27,8 @@ app.use(cors({
 
 app.use(cookieParser())
 
+app.set("trust proxy", 1)
+
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/posts', postRoutes)
