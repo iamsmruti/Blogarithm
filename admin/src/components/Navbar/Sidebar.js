@@ -8,9 +8,8 @@ import ArticleIcon from '@mui/icons-material/Article';
 import CategoryIcon from '@mui/icons-material/Category';
 import StyleIcon from '@mui/icons-material/Style';
 
-import SettingsIcon from '@mui/icons-material/Settings';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
-import ShortCut from '../../pages/Dashboard/Posts/components/Shortcut';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Sidebar = () => {
   return (
@@ -43,8 +42,8 @@ const Sidebar = () => {
         <IconButton sx={{ mb: 1 }}>
           <PowerSettingsNewIcon sx={{ fontSize: 'larger' }} />
         </IconButton>
-        <IconButton href='settings' sx={{ mb: 1 }}>
-          <SettingsIcon sx={{ fontSize: 'larger' }} />
+        <IconButton href='profile' sx={{ mb: 1 }}>
+          <AccountCircleIcon sx={{ fontSize: 'larger' }} />
         </IconButton>
       </Stack>
     </Stack>

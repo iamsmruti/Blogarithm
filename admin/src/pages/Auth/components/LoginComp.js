@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function Copyright(props) {
   return (
@@ -25,21 +26,24 @@ function Copyright(props) {
 
 const LoginComp = () => {
   const navigate = useNavigate()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const [token, setToken] = useState(null)
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-
+    console.log(data)
     try {
-      fetch('http://localhost:4500/api/auth/login', {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email: data.get('email'), password: data.get('password') })
-      }).then((res) => res.json()).then((value) => setToken(value))
+      axios.post('https://blogarithm-api.onrender.com/api/auth/login', {
+        email: username,
+        password: password
+      }, {withCredentials: true} ).then((res) => {
+        console.log(res.data)
+        setToken(res.data)
+        navigate('/dashboard')
+      })
     } catch (err) {
-      console.log(err)
+      console.log(err.message)
     }
   };
 
@@ -72,6 +76,7 @@ const LoginComp = () => {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => setUsername(e.target.value)}
           />
           <TextField
             margin="normal"
@@ -82,6 +87,7 @@ const LoginComp = () => {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={(e) => setPassword(e.target.value)}
           />
           <Button
             type="submit"

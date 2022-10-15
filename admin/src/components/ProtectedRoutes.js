@@ -1,7 +1,7 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = () => {
-    const auth = true
+    const auth = false
     const location = useLocation()
     return (
         auth

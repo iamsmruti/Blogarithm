@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, RouterProvider } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { createTheme, ThemeProvider } from '@mui/material';
 import { deepPurple, red } from '@mui/material/colors';
 import Auth from './pages/Auth/Auth';
@@ -8,12 +8,13 @@ import ProtectedRoute from './components/ProtectedRoutes';
 import NotFound from './404';
 import Users from './pages/Dashboard/Users/Users';
 import Posts from './pages/Dashboard/Posts/Posts';
-import Settings from '@mui/icons-material/Settings';
 import Categories from './pages/Dashboard/Categories/Categories';
 import Tags from './pages/Dashboard/Tags/Tags';
 import Homepage from './pages/Dashboard/Homepage/Homepage';
 
-import Editor from './pages/Dashboard/Posts/components/Editor';
+import Editor from './pages/Dashboard/Posts/Editor/Editor';
+import Profile from './pages/Dashboard/Profile/Profile';
+import PostsLayout from './pages/Dashboard/Posts/PostsLayout';
 
 const theme = createTheme({
   palette: {
@@ -39,8 +40,12 @@ const App = () => {
             <Route element={<ProtectedRoute />}>
 
               {/* Post Routes */}
-              <Route exact path='/posts' element={<Posts />} />
-              <Route exact path='/post/create' element={<Editor />} />
+              <Route exact path='/posts' element={<PostsLayout />}>
+                <Route index element={<Posts />} />
+                <Route exact path='all-posts' element={<Posts />} />
+                <Route exact path='create' element={<Editor />} />
+              </Route>
+              
 
               {/* User Routes */}
               <Route exact path='/users' element={<Users />} />
@@ -55,7 +60,7 @@ const App = () => {
               <Route exact path='/tag/create' element={<Tags />} />
 
               <Route exact path='/dashboard' element={<Dashboard />} />
-              <Route exact path='/settings' element={<Settings />} />
+              <Route exact path='/profile' element={<Profile />} />
               <Route exact path='/homepage' element={<Homepage />} />
               <Route path='*' element={<NotFound />}/>
             </Route>
