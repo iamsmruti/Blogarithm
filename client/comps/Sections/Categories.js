@@ -7,40 +7,50 @@ const categories = [
   {
     title: 'News',
     total: 24,
+    path: '/blogs/news'
   },
   {
     title: 'Science',
     total: 24,
+    path: '/blogs/science'
   },
   {
     title: 'Programming',
     total: 24,
+    path: '/blogs/programming'
   },
   {
     title: 'Gadgets',
     total: 24,
+    path: '/blogs/gadgets'
   },
   {
     title: 'Tutorials',
     total: 24,
+    path: '/blogs/gadgets'
   },
 ];
 
 const tags = [
     {
-        title: 'Javascript'
+        title: 'Javascript',
+        path: '/search?query=javascript'
     },
     {
-        title: 'CSS'
+        title: 'CSS',
+        path: '/search?query=css'
     },
     {
-        title: 'HTML'
+        title: 'HTML',
+        path: '/search?query=html'
     },
     {
-        title: 'ReactJS'
+        title: 'ReactJS',
+        path: '/search?query=react'
     },
     {
-        title: 'AngularJS'
+        title: 'AngularJS',
+        path: '/search?query=angular'
     }
 ]
 
@@ -48,12 +58,12 @@ const tags = [
 const Categories = () => {
   return (
     <Box sx={{mb: 4}}>
-      <SubHeading title={'Categories'} />
+      <SubHeading icon={<></>} title={'Categories'} />
       <Stack direction="column">
         {categories.map((item) => (
         <>
           <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', '&:hover': {bgcolor: 'lightgray'}}}>
-            <Link href={''}>
+            <Link href={item.path}>
             <a>
                 <Typography variant='body1' sx={{pt: 1.5, pb: 1.5, pl: 1}}>{item.title}</Typography>
             </a>
@@ -66,7 +76,11 @@ const Categories = () => {
       </Stack>
       <Box sx={{mt: 5}}>
         {tags.map((item) => (
+          <Link href={item.path}>
+          <a>
             <Button variant='contained' sx={{fontSize: 14, width: 'fit-content', m: 1}}>{item.title}</Button>
+            </a>
+            </Link>
         ))}
       </Box>
     </Box>

@@ -1,14 +1,14 @@
 import React from 'react'
 import { Box, Grid} from '@mui/material'
-import Banner from '../../comps/Utils/Banner'
+import Banner from '../../../comps/Utils/Banner'
 import { Container } from '@mui/system'
-import Section1 from '../../comps/Sections/Section1'
-import Categories from '../../comps/Sections/Categories'
+import Section1 from '../../../comps/Sections/Section1'
+import Categories from '../../../comps/Sections/Categories'
 
-const tutorials = () => {
+const programming = () => {
   return (
     <Box sx={{mt: 10}}>
-      <Banner title={'Tutorials'}/>
+      <Banner title={'Programming'}/>
 
       <Container sx={{mt: 4}}>
         <Grid container spacing={3}>
@@ -24,4 +24,4 @@ const tutorials = () => {
   )
 }
 
-export default tutorials
+export default programming

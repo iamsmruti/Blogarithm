@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
-import LoginComp from '../comps/Auth/LoginComp';
+import RegisterComp from '../../comps/Auth/RegisterComp';
 
 const Login = () => {
   return (
@@ -61,7 +61,7 @@ const Login = () => {
           xs={12}
           md={6}
         >
-          <LoginComp />
+          <RegisterComp />
         </Grid>
       </Grid>
     </Box>

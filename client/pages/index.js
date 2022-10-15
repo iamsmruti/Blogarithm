@@ -22,21 +22,21 @@ export default function Home({data}) {
       <MainSection />
       <Hotposts />
 
-      <Heading title={'RECENT'}/>
+      <Heading icon={<></>} title={'RECENT'}/>
       <Grid container spacing={5}>
         <Grid item xs={12} md={8} sm={6}>
           <Section2 />
         </Grid>
         <Grid item xs={12} md={4} sm={6}>
-          <SideSection title={'Most Read'}/>
-          <SideSection title={'Featured Posts'}/>
+          <SideSection items={[]} title={'Most Read'}/>
+          <SideSection items={[]} title={'Featured Posts'}/>
         </Grid>
       </Grid>
 
-      <Heading title={'TRENDING'}/>
+      <Heading icon={<></>} title={'TRENDING'}/>
       <Section3 />
 
-      <Heading title={'MOST LIKED'}/>
+      <Heading icon={<></>} title={'MOST LIKED'}/>
       <Grid container spacing={5}>
         <Grid item xs={12} md={8} sm={6}>
           <Section1 />

@@ -7,50 +7,50 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 export const menuItems = [
     {
         title: 'News',
-        path: '/blog/news'
+        path: '/blogs/news'
     },
     {
         title: 'Science',
-        path: '/blog/science'
+        path: '/blogs/science'
     },
     {
         title: 'Programming',
-        path: '/blog/programming'
+        path: '/blogs/programming'
     },
     {
         title: 'Gadgets',
-        path: '/blog/gadgets'
+        path: '/blogs/gadgets'
     },
     {
         title: 'Tutorials',
-        path: '/blog/tutorials'
+        path: '/blogs/tutorials'
     }
 ]
 
 export const MenuItemsMob = [
     {
         title: 'News',
-        path: '/blog/news',
+        path: '/blogs/news',
         icon: <FeedIcon />
     },
     {
         title: 'Science',
-        path: '/blog/science',
+        path: '/blogs/science',
         icon: <ScienceIcon />
     },
     {
         title: 'Programming',
-        path: '/blog/programming',
+        path: '/blogs/programming',
         icon: <TerminalIcon />
     },
     {
         title: 'Gadgets',
-        path: '/blog/gadgets',
+        path: '/blogs/gadgets',
         icon: <DevicesOtherIcon />
     },
     {
         title: 'Tutorials',
-        path: '/blog/tutorials',
+        path: '/blogs/tutorials',
         icon: <LightbulbIcon />
     }
 ]
