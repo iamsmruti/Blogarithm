@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import { Button, IconButton,Typography } from '@mui/material';
+import { Button, IconButton,Typography, Box } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
@@ -11,6 +10,7 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 
 import Link from 'next/link';
 import Heading from '../Heading';
+import { useRouter } from 'next/router';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -39,6 +39,7 @@ const images = [
 
 const Hotposts = () => {
   const theme = useTheme();
+  const router = useRouter()
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = images.length;
 
@@ -58,14 +59,14 @@ const Hotposts = () => {
     <>
     <Heading title={'HOT'} icon={<WhatshotIcon sx={{color: 'red'}}/>}/>
     <Box
-      fullWidth
       sx={{
         flexGrow: 1,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        mb: 8
+        mb: 8,
+        width: '100%'
       }}
     >
       <Box
@@ -101,7 +102,7 @@ const Hotposts = () => {
           enableMouseEvents
         >
           {images.map((step, index) => (
-            <Box item key={step.label} sx={{ ml: { md: 6, xs: 0 } }}>
+            <Box key={step.label} sx={{ ml: { md: 6, xs: 0 } }}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <Box
                   sx={{
@@ -144,7 +145,7 @@ const Hotposts = () => {
                         </a>
                       </Link>
                     </Typography>
-                    <Button onClick={() => router.push('/blog/news')} variant='contained' sx={{p: 0, fontSize: 10, fontWeight: 400}}>Category</Button>
+                    <Button onClick={() => router.push('/blogs/news')} variant='contained' sx={{p: 0, fontSize: 10, fontWeight: 400}}>Category</Button>
                     <Typography
                       variant="body2"
                       sx={{

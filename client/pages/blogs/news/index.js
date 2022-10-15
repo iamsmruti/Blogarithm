@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Grid} from '@mui/material'
-import Banner from '../../comps/Utils/Banner'
+import Banner from '../../../comps/Utils/Banner'
 import { Container } from '@mui/system'
-import Section1 from '../../comps/Sections/Section1'
-import Categories from '../../comps/Sections/Categories'
+import Section1 from '../../../comps/Sections/Section1'
+import Categories from '../../../comps/Sections/Categories'
 
 const news = () => {
   return (

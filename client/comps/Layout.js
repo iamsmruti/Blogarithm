@@ -1,16 +1,18 @@
 import NavBar from "./Navbar";
 import { useRouter } from "next/router";
 import Footer from "./Footer";
+import { Box } from "@mui/material";
 
 const Layout = ({children}) => {
     const { asPath, pathname } = useRouter();
-    console.log(asPath, pathname)
     return (
-        <div>
+        <Box>
             {(asPath !== '/login' && asPath !== '/register') && <NavBar />}
-            {children}
+            <Box sx={{mt: {md: 8, xs: 7}}}>
+                {children}
+            </Box>
             {(asPath !== '/login' && asPath !== '/register') && <Footer />}
-        </div>
+        </Box>
     );
 }
  

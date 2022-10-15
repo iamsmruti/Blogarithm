@@ -11,8 +11,10 @@ import Categories from './Categories';
 import Link from 'next/link';
 import { deepPurple } from '@mui/material/colors';
 import CategoryButton from '../assets/Button';
+import { useRouter } from 'next/router';
 
 const Section1 = () => {
+  const router = useRouter()
   return (
     <>
       {itemData.map((item) => (

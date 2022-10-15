@@ -8,6 +8,8 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import SideSection from './SideSection';
 import Categories from './Categories';
 
+import { useRouter } from 'next/router';
+
 import Link from 'next/link';
 import { deepPurple } from '@mui/material/colors';
 
@@ -21,6 +23,7 @@ function srcset(image, width, height, rows = 1, cols = 1) {
 }
 
 const Section2 = () => {
+  const router = useRouter()
   return (
     <>
       <ImageList

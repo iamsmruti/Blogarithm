@@ -40,7 +40,7 @@ const itemData = [
 const SideSection = ({ items, title }) => {
   return (
     <Box sx={{mb: {md: 10, xs: 5}}}>
-      <SubHeading title={title} />
+      <SubHeading icon={<></>} title={title} />
       {itemData.map((item) => (
         <Grid key={item.title} container spacing={2}>
           <Grid item md={4} xs={4}>

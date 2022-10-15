@@ -1,6 +1,8 @@
 import { Button } from '@mui/material'
+import { useRouter } from 'next/router';
 
 const CategoryButton = () => {
+  const router = useRouter()
   return (
     <Button
       onClick={() => router.push('/blog/news')}
