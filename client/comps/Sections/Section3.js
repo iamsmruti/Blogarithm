@@ -3,6 +3,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 import Link from 'next/link';
 import { deepPurple } from '@mui/material/colors';
+import { useRouter } from 'next/router';
 
 function srcset(image, width, height, rows = 1, cols = 1) {
   return {
@@ -14,6 +15,7 @@ function srcset(image, width, height, rows = 1, cols = 1) {
 }
 
 const Section3 = () => {
+  const router = useRouter()
   return (
     <>
       <ImageList
